@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import {bindActionCreators, createStore} from 'redux';
+import {bindActionCreators, combineReducers, createStore} from 'redux';
 import {Provider, connect} from 'react-redux';
 
 // React Component
@@ -26,19 +26,22 @@ Counter.propTypes = {
 const increaseAction = {type: 'increase'};
 
 // Reducer
-function counter (state = {count: 0}, action) {
-    let count = state.count
+function count (state = 0, action) {
 
     switch (action.type) {
         case 'increase':
-            return {count: count + 1}
+            return state + 1
         default:
             return state
     }
 }
 
+let todoApp = combineReducers({
+  count
+});
+
 // Store
-let store = createStore(counter);
+let store = createStore(todoApp);
 
 function mapStateToProps (state) {
     return {value: state.count};
