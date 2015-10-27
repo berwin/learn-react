@@ -36,10 +36,19 @@ function count (state = 0, action) {
     }
 }
 
-let todoApp = combineReducers({
-  count
-});
+function count2 (state = 0, action) {
 
+    switch (action.type) {
+        case 'increase2':
+            return state + 1
+        default:
+            return state
+    }
+}
+
+let todoApp = combineReducers({
+  count, count2
+});
 
 // Store
 let store = createStore(todoApp);
@@ -49,6 +58,7 @@ function mapStateToProps (state) {
 }
 
 function mapDispatchToProps (dispatch) {
+    store.getState()
     // return {onIncreaseClick: dispatch(increaseAction)}
     return {onIncreaseClick: () => dispatch(increaseAction)}
     // return bindActionCreators(increaseAction, dispatch);
