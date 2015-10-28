@@ -1,4 +1,4 @@
-import {ADD_ITEM, UPDATE_ITEM, DELETE_ITEM, UPDATE_ITEMS, DELETE_ITEMS} from '../constants/ActionTypes';
+import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM, UPDATE_ITEMS, DELETE_ITEMS } from '../constants/ActionTypes';
 
 /**
  * 添加
