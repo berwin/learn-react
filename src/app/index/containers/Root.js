@@ -4,8 +4,10 @@ import App from './App';
 
 export default class Root extends Component {
   render() {
-    <Provider store={this.props.store}>
-      <App />
-    </Provider>
+    return (
+      <Provider store={this.props.store}>
+        <App />
+      </Provider>
+    )
   }
 }

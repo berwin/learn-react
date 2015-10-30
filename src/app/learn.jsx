@@ -8,6 +8,8 @@ class Counter extends React.Component {
     render () {
         const {value, onIncreaseClick} = this.props;
 
+        console.log(this.props)
+
         return (
             <div>
                 <span>{value}</span>
@@ -70,5 +72,5 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('example')
+  document.getElementById('app')
 );

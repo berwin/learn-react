@@ -1,4 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import createStore from './store';
+import Root from './containers/Root';
 
-ReactDOM.render(<h1>hello world</h1>, document.getElementById('app'));
+let store = createStore();
+
+ReactDOM.render(
+  <Root store={store} />,
+  document.getElementById('app')
+);
