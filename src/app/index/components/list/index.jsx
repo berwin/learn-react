@@ -7,8 +7,6 @@ import List from './List.jsx';
 
 export default class ListBox extends Component {
   render () {
-    console.log('list-index.jsx', this.props)
-
     return (
       <div className="list">
         <header className="list-header">
@@ -23,8 +21,8 @@ export default class ListBox extends Component {
     );
   }
 }
-let mapStateToProps = state => state;
 
+let mapStateToProps = state => state;
 let mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListBox);

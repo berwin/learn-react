@@ -14,7 +14,6 @@ export default class Category extends Component {
 }
 
 let mapStateToProps = state => state;
-
 let mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);
