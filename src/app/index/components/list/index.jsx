@@ -30,7 +30,7 @@ export default class List extends Component {
           </li>
         </ul>
         <footer className="list-footer">
-          29个已完成 <a href="javascript:;">显示</a>
+          <a href="javascript:;">Show Completed</a>
         </footer>
       </div>
     );
