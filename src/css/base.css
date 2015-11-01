@@ -179,8 +179,9 @@ label[for='toggle-all'] {
   font-size: 30px;
   /*color: #cc9a9a;*/
   color: rgba(42, 174, 245, .5);
-  margin-bottom: 11px;
+  /*margin-bottom: 11px;*/
   transition: color 0.2s ease-out;
+  font-family: monospace;
 }
 
 #app .list li .destroy:hover {

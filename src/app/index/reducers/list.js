@@ -41,7 +41,7 @@ let updateItem = ({id, ...other}, state) => {
 export default (state = [], action) => {
   switch (action.type) {
     case ADD_ITEM:
-      return [createItem(action.text)]
+      return [createItem(action.text), ...state]
 
     case UPDATE_ITEM:
       return updateItem(action.data, state)
