@@ -29,13 +29,13 @@ let createItem = text => {
 let updateItem = ({id, ...other}, state) => {
   let time = Date.now();
 
-  return state.map(item => {
+  return state.map(item => 
     item.id === id ?
-    Object.assign({}, state, other, {
+    Object.assign({}, item, other, {
       updateTime: time
     }) :
     item
-  });
+  );
 }
 
 export default (state = [], action) => {
