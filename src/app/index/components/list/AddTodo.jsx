@@ -13,9 +13,6 @@ export default class AddTodo extends Component {
   }
 
   render () {
-
-    console.log( 'AddTodo.jsx', this.props )
-
     return (
       <input id="new-todo" placeholder="What needs to be done?" onKeyUp={ this.handleKeyUp.bind(this) } />
     );
