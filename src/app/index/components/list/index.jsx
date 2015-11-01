@@ -6,7 +6,15 @@ import AddTodo from './AddTodo.jsx';
 import List from './List.jsx';
 
 export default class ListBox extends Component {
+  filter() {
+    let { active, activeFilter } = this.props;
+
+    activeFilter(!active);
+  }
+
   render () {
+    let { active } = this.props;
+
     return (
       <div className="list">
         <header className="list-header">
@@ -15,7 +23,7 @@ export default class ListBox extends Component {
         </header>
         <List {...this.props} />
         <footer className="list-footer">
-          <a href="javascript:;">Show Completed</a>
+          <a href="javascript:;" onClick={this.filter.bind(this)}>{active ? 'Show Completed' : 'Hide Completed'}</a>
         </footer>
       </div>
     );

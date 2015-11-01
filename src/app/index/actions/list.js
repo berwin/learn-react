@@ -34,3 +34,10 @@ export function deleteItems(query) {
     query
   }
 }
+
+export function activeFilter(action) {
+  return {
+    type: types.FILTER_ITEMS,
+    active: action
+  }
+}
