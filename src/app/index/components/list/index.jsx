@@ -15,7 +15,7 @@ export default class ListBox extends Component {
           <input id="toggle-all" type="checkbox" />
           <AddTodo addItem={this.props.addItem} />
         </header>
-        <List list={this.props.list} />
+        <List {...this.props} />
         <footer className="list-footer">
           <a href="javascript:;">Show Completed</a>
         </footer>

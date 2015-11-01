@@ -71,6 +71,7 @@ input[type="checkbox"] {
 .category li.active {
   color:#fff;
   background: rgba(42, 174, 245, 1);
+  /*background: rgba(206, 206, 206, 1);*/
 }
 
 label[for='toggle-all'] {
