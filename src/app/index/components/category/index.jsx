@@ -6,7 +6,11 @@ import * as actions from '../../actions/category.js';
 export default class Category extends Component {
   render () {
     console.log('category-index.jsx', this.props)
-    return (<div>menu</div>);
+    return (
+      <div className="category">
+        <li className="active">Default</li>
+      </div>
+    );
   }
 }
 

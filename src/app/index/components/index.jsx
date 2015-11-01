@@ -8,7 +8,7 @@ export default class Index extends Component {
     return (
       <div>
         <h1>Todo-List</h1>
-        <div className="box">
+        <div className="box clearfix">
           <Category />
           <List />
         </div>

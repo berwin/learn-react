@@ -1,10 +1,37 @@
 html,body {margin: 0; padding: 0;}
+.clearfix:before,.clearfix:after{content:''; display:table;}.clearfix:after{clear:both;}.clearfix{*zoom:1;}/*清浮动用的*/
+li{list-style: none;}
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+a {
+  color: rgba(42, 174, 245, 1);
+  text-decoration:none;
+}
+
+button,
+input[type="checkbox"] {
+  outline: none;
+}
 
 #app {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #4d4d4d;
-  min-width: 230px;
-  max-width: 550px;
+  min-width: 430px;
+  max-width: 750px;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -26,4 +53,175 @@ html,body {margin: 0; padding: 0;}
   border:1px solid #ccc;
   border-radius:5px;
   box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.category, .list {
+  float:left;
+  box-sizing:border-box;
+}
+
+.category {
+  padding:10px 0;
+  width:40%;
+}
+.category li {
+  padding:0 10px;
+  line-height: 30px;
+}
+.category li.active {
+  color:#fff;
+  background: rgba(42, 174, 245, 1);
+}
+
+label[for='toggle-all'] {
+  display: none;
+}
+
+#app .list-header {
+  position:relative;
+  height:65px;
+}
+
+#toggle-all {
+  position: absolute;
+  top: 12px;
+  left: -12px;
+  width: 60px;
+  height: 34px;
+  text-align: center;
+  border: none; /* Mobile Safari */
+}
+
+#toggle-all:before {
+  content: '❯';
+  font-size: 22px;
+  color: #e6e6e6;
+  padding: 10px 27px 10px 27px;
+}
+
+#toggle-all:checked:before {
+  color: #737373;
+}
+
+#app .list {
+  width:60%;
+  border-left:1px solid #ededed;
+}
+
+#new-todo {
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 1.4em;
+  outline: none;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+#app .todo-list {
+  padding:0;margin:0;
+}
+
+#app .list li {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+}
+
+
+#app .list li .toggle {
+  text-align: center;
+  width: 40px;
+  /* auto, since non-WebKit browsers doesn't support input styling */
+  height: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border: none; /* Mobile Safari */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#app .list li .toggle:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+
+#app .list li .toggle:checked:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+
+#app .list li label {
+  white-space: pre;
+  word-break: break-word;
+  padding: 15px 60px 15px 15px;
+  margin-left: 45px;
+  display: block;
+  line-height: 1.2;
+  transition: color 0.4s;
+}
+
+#app .list li .destroy {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 30px;
+  /*color: #cc9a9a;*/
+  color: rgba(42, 174, 245, .5);
+  margin-bottom: 11px;
+  transition: color 0.2s ease-out;
+}
+
+#app .list li .destroy:hover {
+  color: rgba(42, 174, 245, 1);
+}
+
+#app .list li .destroy:after {
+  content: '×';
+}
+
+#app .list li:hover .destroy {
+  display: block;
+}
+
+.list-footer {
+  color: #777;
+  padding: 10px 15px;
+  height: 20px;
+  text-align: center;
+}
+
+
+
+/*
+  Hack to remove background from Mobile Safari.
+  Can't use it globally since it destroys checkboxes in Firefox
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #toggle-all,
+  #todo-list li .toggle {
+    background: none;
+  }
+
+  #todo-list li .toggle {
+    height: 40px;
+  }
+
+  #toggle-all {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-appearance: none;
+    appearance: none;
+  }
 }
