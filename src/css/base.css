@@ -155,7 +155,7 @@ label[for='toggle-all'] {
 }
 
 #app .list li .toggle:checked:after {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="rgba(42, 174, 245, .6)" stroke-width="3"/><path fill="rgba(42, 174, 245, .6)" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
 }
 
 #app .list li label {
