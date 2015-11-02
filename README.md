@@ -16,7 +16,7 @@ npm run build
 npm run start
 ```
 
-在浏览器运行 
+Run in the Browser
 
 ```shell
 http://127.0.0.1:3000
