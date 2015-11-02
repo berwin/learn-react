@@ -12,7 +12,7 @@ npm run build
 ## run
 
 ```shell
-npm start
+npm run start
 ```
 
 在浏览器运行 
