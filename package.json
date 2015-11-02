@@ -2,10 +2,12 @@
   "name": "learn-react",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp"
+    "build":"gulp webpack",
+    "watch": "gulp",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

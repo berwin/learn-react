@@ -17,6 +17,6 @@ var server = http.createServer(function (req, res) {
   res.end(file);
 });
 
-server.listen(1996, function () {
+server.listen(1995, function () {
   console.log('\x1B[32m', 'Server started http://127.0.0.1:1995');
 });
