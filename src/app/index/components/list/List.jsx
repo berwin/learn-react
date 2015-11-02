@@ -3,12 +3,12 @@ import Todo from './Todo.jsx';
 
 export default class List extends Component {
   render () {
-    let { deleteItem, updateItem, activeFilter, active } = this.props;
+    let { deleteItem, updateItem, activeFilter, filter } = this.props;
 
     return (
       <ul className="todo-list">{
         this.props.list.map(todo => 
-          active && todo.status ? '' :
+          filter.active && todo.status ? '' :
           <Todo
             key={todo.id}
             deleteItem={ () => deleteItem(todo.id) }

@@ -7,7 +7,7 @@ export default class View extends Component {
   render () {
     return (
       <Router history={createHistory()}>
-        <Route path="/" component={Index} store={this.props}></Route>
+        <Route path="/" component={ Index }></Route>
       </Router>
     )
   }

@@ -10,7 +10,7 @@ export default class Index extends Component {
         <h1>Todo-List</h1>
         <div className="box clearfix">
           <Category />
-          <ListBox list={this.props.list} />
+          <ListBox />
         </div>
       </div>
     );

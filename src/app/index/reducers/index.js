@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import category from './category';
 import list from './list';
-import active from './filter';
+import filter from './filter';
 
-export default combineReducers({category, list, active});
+export default combineReducers({category, list, filter});

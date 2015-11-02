@@ -4,33 +4,41 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions/list.js';
 import AddTodo from './AddTodo.jsx';
 import List from './List.jsx';
+import Toggle from './Toggle.jsx';
 
 export default class ListBox extends Component {
-  filter() {
-    let { active, activeFilter } = this.props;
+  toggleComplated() {
+    let { filter, activeFilter } = this.props;
 
-    activeFilter(!active);
+    activeFilter(!filter.active);
   }
 
   render () {
-    let { active } = this.props;
+    let { filter, addItem, updateItems, isAllCompleted } = this.props;
 
     return (
       <div className="list">
         <header className="list-header">
-          <input id="toggle-all" type="checkbox" />
-          <AddTodo addItem={this.props.addItem} />
+          <Toggle updateItems={ updateItems } isAllCompleted={isAllCompleted} />
+          <AddTodo addItem={addItem} />
         </header>
         <List {...this.props} />
         <footer className="list-footer">
-          <a href="javascript:;" onClick={this.filter.bind(this)}>{active ? 'Show Completed' : 'Hide Completed'}</a>
+          <a href="javascript:;" onClick={this.toggleComplated.bind(this)}>{filter.active ? 'Show Completed' : 'Hide Completed'}</a>
         </footer>
       </div>
     );
   }
 }
 
-let mapStateToProps = state => state;
+let mapStateToProps = state => {
+  let list = state.list;
+
+  return {
+    isAllCompleted: !!list.length && list.every(item => item.status),
+    ...state
+  }
+};
 let mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListBox);

@@ -1,9 +1,9 @@
 import { FILTER_ITEMS } from '../constants/ActionTypes';
 
-export default (state = true, action) => {
+export default (state = {active: true}, action) => {
   switch (action.type) {
     case FILTER_ITEMS:
-      return action.active
+      return Object.assign({}, state, {active: action.active})
 
     default:
       return state
