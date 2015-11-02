@@ -14,8 +14,12 @@ module.exports = {
 
     resolve: {
         root: [__dirname + '/node_modules']
-    },
+    }
+};
 
+/*
+ * 压缩代码配置项
+ *
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             compress: {
@@ -23,4 +27,4 @@ module.exports = {
             }
         })
     ]
-};
+*/

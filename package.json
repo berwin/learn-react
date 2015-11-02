@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp webpack",
-    "watch": "gulp",
+    "build": "webpack -p",
+    "watch": "webpack -w",
     "start": "node app.js"
   },
   "repository": {
@@ -31,7 +31,6 @@
     "request": "^2.65.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
     "webpack": "^1.12.2"
   }
 }
