@@ -5,6 +5,7 @@ import * as actions from '../../actions/category.js';
 
 export default class Category extends Component {
   render () {
+    console.log(this.props)
     return (
       <div className="category">
         <li className="active">Default</li>
@@ -13,7 +14,7 @@ export default class Category extends Component {
   }
 }
 
-let mapStateToProps = state => state;
+let mapStateToProps = state => ({category: state.category});
 let mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);
